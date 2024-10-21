@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import Optional
 
 
 @dataclass
@@ -29,10 +30,10 @@ class User:
     name: str
     username: str
     email: str
-    address: Address
+    address: Optional[Address]
     phone: str
     website: str
-    company: Company
+    company: Optional[Company]
 
 
 @dataclass
