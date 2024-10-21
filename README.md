@@ -13,6 +13,7 @@
     - [Running Tests](#running-tests)
     - [Code Coverage](#code-coverage)
     - [Type Checking with Mypy](#type-checking-with-mypy)
+- [Continuous Integration](#continuous-integration)
 - [Logging](#logging)
 - [Project Structure](#project-structure)
 - [License](#license)
@@ -53,6 +54,7 @@ command-line interface that allows users to:
     - `pytest-mock`
     - `requests-mock`
     - `pytest-cov`
+    - `mypy`
     - `types-requests`
     - `types-tabulate`
 - **Docker** (Optional): For running the application in a container
@@ -120,6 +122,31 @@ After installing the dependencies and activating the virtual environment, you ca
 python -m App.main
 ```
 
+## **Usage**
+
+Upon starting the application, you will see a menu like this:
+
+```markdown
+Please select the following options to get data from the APIs:
+    1. Press 1 for getting all the user data
+    2. Press 2 for getting all the posts from the APIs
+    3. To exit the Application
+
+```
+* Option 1: Fetches and displays all user data.
+* Option 2: Fetches and displays all post data.
+* Option 3: Exits the application.
+### Example Usage:
+```markdown
+Please select the following options to get data from the APIs:
+    1. Press 1 for getting all the user data
+    2. Press 2 for getting all the posts from the APIs
+    3. To exit the Application
+1
+
+```
+
+After selecting 1, the application will fetch and display user data in a tabular format.
 ## **Testing**
 
 ### **Running Tests**
@@ -152,6 +179,25 @@ mypy App/ tests/
 This command checks all Python files in the App/ and tests/ directories.
 
 Address any reported type errors to maintain code quality.
+
+## **Continuous Integration**
+
+This project includes a GitHub Actions workflow to automate the execution of the pytest suite.
+
+### **Manual Pytest Execution Workflow**
+
+- **Location**: `.github/workflows/manual.yml`
+- **Trigger**: Manually via the GitHub Actions user interface.
+- **Purpose**: Allows you to run the test suite on-demand.
+
+#### **How to Use:**
+
+1. Navigate to the **"Actions"** tab in your GitHub repository.
+2. Click on **"Manual Pytest Execution"**.
+3. Click **"Run workflow"**.
+4. Select the branch (if applicable).
+5. Click **"Run workflow"** to start the tests.
+
 ## **Logging**
 The application uses Python's built-in logging module for logging.
 
@@ -205,3 +251,7 @@ BangOlufsenProject/
 * Dockerfile: Configuration file for building the Docker image.
 * requirements.txt: Lists the project dependencies.
 * README.md: Project documentation.
+
+## **License**
+
+This project is not licensed currently.
