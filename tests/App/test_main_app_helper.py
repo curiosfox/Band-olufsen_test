@@ -1,4 +1,5 @@
 import logging
+from unittest.mock import MagicMock
 
 import pytest
 
@@ -32,6 +33,7 @@ class TestAppHelper(object):
     def load_variables(self, request) -> None:
         """ Load test variables to be utilized """
 
+
         request.cls.mock_user = User(
             id=1,
             name="Test User",
@@ -49,4 +51,5 @@ class TestAppHelper(object):
             body="Test body content."
         )
         request.cls.test_logger = self.get_log_obj()
-        request.cls.main_app = MainApp(request.cls.test_logger)
+        mock_logger = MagicMock(spec=request.cls.test_logger)
+        request.cls.main_app = MainApp(log_obj=mock_logger)

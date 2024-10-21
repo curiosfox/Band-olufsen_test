@@ -12,6 +12,7 @@
 - [Testing](#testing)
     - [Running Tests](#running-tests)
     - [Code Coverage](#code-coverage)
+    - [Type Checking with Mypy](#type-checking-with-mypy)
 - [Logging](#logging)
 - [Project Structure](#project-structure)
 - [License](#license)
@@ -65,8 +66,8 @@ command-line interface that allows users to:
 1. **Clone the Repository**
 
  ```bash
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/curiosfox/Band-olufsen_test.git
+cd Band-olufsen_test
  ```
 
 2. **Create a Virtual Environment**
@@ -116,7 +117,7 @@ docker run -it bang-olufsen-app
 After installing the dependencies and activating the virtual environment, you can run the application using:
 
 ```bash
-python main.py
+python -m App.main
 ```
 
 ## **Testing**
@@ -140,6 +141,17 @@ pytest --cov=App --cov-report=html tests/
 1. This command runs the tests and generates an HTML coverage report in the htmlcov/ directory.
 2. Open htmlcov/index.html in your web browser to view the coverage report.
 
+### **Type Checking with Mypy**
+The project uses Mypy for static type checking to ensure type correctness throughout the codebase.
+
+### Running Mypy
+To perform type checking with Mypy:
+```bash
+mypy App/ tests/
+```
+This command checks all Python files in the App/ and tests/ directories.
+
+Address any reported type errors to maintain code quality.
 ## **Logging**
 The application uses Python's built-in logging module for logging.
 
