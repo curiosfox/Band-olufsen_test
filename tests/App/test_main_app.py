@@ -1,10 +1,5 @@
 import pytest
-from App.main import MainApp
-from App.api import ApiClass
-from App.models import User, Post
 from unittest.mock import MagicMock
-from typing import List, Any
-
 from tests.App.test_main_app_helper import TestAppHelper
 
 
@@ -52,7 +47,7 @@ class TestApp(TestAppHelper):
         assert self.main_app.print_user_data.call_count == 0
         assert self.main_app.print_posts_data.call_count == 0
 
-    def test_main_process_sucess(self, monkeypatch):
+    def test_main_process_sucess(self, request, monkeypatch):
         """Test main_process method when user selects option 1."""
         inputs = iter(['1', '3'])  # Simulate user entering '1' then '3' to exit
 
