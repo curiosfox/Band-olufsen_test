@@ -1,13 +1,10 @@
-name: CI Pipeline
+name: Manual Pytest Execution
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  workflow_dispatch:  # Allows manual triggering
 
 jobs:
-  build-test:
+  run-tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,9 +22,9 @@ jobs:
           pip install -r requirements.txt
           pip install pytest pytest-cov
 
-      - name: Run Tests with Coverage
+      - name: Run Pytest with Coverage
         run: |
-          pytest --cov=App tests/
+          pytest --cov=App --cov-report=html tests/
         env:
           CI: true
 

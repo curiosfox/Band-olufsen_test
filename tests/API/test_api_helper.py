@@ -1,4 +1,6 @@
 import logging
+from unittest.mock import MagicMock
+
 import pytest
 
 from App.api import ApiClass
@@ -66,4 +68,5 @@ class TestAPIHelper(object):
         ]
         request.cls.base_url = 'https://jsonplaceholder.typicode.com'
         request.cls.test_logger = self.get_log_obj()
-        request.cls.api_client = ApiClass(request.cls.test_logger)
+        mock_logger = MagicMock(spec=request.cls.test_logger)
+        request.cls.api_client = ApiClass(logger=mock_logger)
