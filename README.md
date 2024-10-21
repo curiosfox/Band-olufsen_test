@@ -176,10 +176,10 @@ BangOlufsenProject/
 │   ├── __init__.py
 │   ├── conftest.py
 │   ├── API/
-│   │   ├── __init__.py
+│   │   ├── test_api_helper.py
 │   │   └── test_api.py
 │   ├── App/
-│   │   ├── __init__.py
+│   │   ├── test_main_app_helper.py
 │   │   └── test_main_app.py
 ├── Dockerfile
 ├── requirements.txt
