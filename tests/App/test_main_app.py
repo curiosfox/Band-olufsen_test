@@ -4,6 +4,7 @@ from tests.App.test_main_app_helper import TestAppHelper
 
 
 @pytest.mark.usefixtures("load_variables")
+@pytest.mark.app
 class TestApp(TestAppHelper):
     def test_print_user_data(self, request, monkeypatch):
         """Test print_user_data method."""

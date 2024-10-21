@@ -3,6 +3,7 @@ from tests.API.test_api_helper import TestAPIHelper
 
 
 @pytest.mark.usefixtures("load_variables")
+@pytest.mark.api
 class TestAPI(TestAPIHelper):
     def test_get_users_success(self, request, requests_mock):
         """Test get_users method for successful response."""
